@@ -65,7 +65,7 @@ palm_desert_flow <- streamflows$`10259200`
 HRU-level forcings can be read in using the `importHRUs(folder, subset=NULL, verbose=TRUE, ...)` function.
 
 ## Example memory-efficient looping over basin subsets
-The following code shows an example usage where the dataset is broken into 50 member "chunks" where data is read in, followed by a loop over each basin which. This inner basin loop could be used, for example, to write model input files.
+The code below shows an example usage where the dataset is broken into 50 member "chunks" where data is read in, followed by a loop over each basin. This inner basin loop can be used, for example, to write model input files.
 ```r
 #-----------------------------------------------------------------------------#
 #-- Settings
