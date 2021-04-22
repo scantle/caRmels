@@ -1,24 +1,21 @@
 # caRmels: An R interface for the CAMELS Dataset
-
 This R package adds some basic functionality to R for working with the Catchment Attributes and MEteorology for Large-sample Studies (CAMELS) dataset detailed in Newman et al. (2015) and Addor et al. (2017) and available at the [NCAR website](https://ral.ucar.edu/solutions/products/camels)
 
 This package contains functions to download the datasets, but it is recommended you instead download them directly from the NCAR website.
 
 ## Package Installation
-We suggest using the *devtools* package function `install_github` to install the package:
+We suggest using the [devtools](https://cran.r-project.org/web/packages/devtools/index.html) package function `install_github` to install the package:
 ```r
 library(devtools)
 install_github('scantle/caRmels')
 
-# Test it out
 library(caRmels)
 ```
 
 ## Basic data reading/access functions
+First, we assume the datasets (both the "meteorology, observed flow, meta data" and "attributes" zip files) have been downloaded and unzipped to a directory. For this example, we assume the folder path has been assigned to the variable `camels_dir`.
 
-First, we assume the datasets (both the "meteorology, observed flow, meta data" and Attributes zip files) have been downloaded and unzipped to a directory we will assume has been assigned to `camels_dir`.
-
-Basic information (folder, ID, name, lat, long, area) about the 671 gauges in the CAMELS dataset are stored in the gauge information text file. CaRmels can read this in and store it in a DataFrame:
+Basic information (folder, ID, name, lat, long, area) about the 671 gauges in the CAMELS dataset are stored in the gauge information text file. caRmels can read this in and store it in a DataFrame:
 ```r
 gauge_info_path <- file.path(camels_dir,'basin_dataset_public_v1p2/basin_metadata/gauge_information.txt')
 gauges <- read.gaugeInfo(gauge_info_path)
@@ -68,6 +65,7 @@ palm_desert_flow <- streamflows$`10259200`
 HRU-level forcings can be read in using the `importHRUs(folder, subset=NULL, verbose=TRUE, ...)` function.
 
 ## Example memory-efficient looping over basin subsets
+The following code shows an example usage where the dataset is broken into 50 member "chunks" where data is read in, followed by a loop over each basin which. This inner basin loop could be used, for example, to write model input files.
 ```r
 #-----------------------------------------------------------------------------#
 #-- Settings
@@ -110,6 +108,9 @@ for (ibasin in 1:(ceiling(length(allbasins)/bss))) {
   #-- Loop over subset basins
   print('* Looping over basins...')
   for (i in 1:length(basinSubset)) {
+  
+    basin_id <- basinSubset[i]
+    basin_name <- trimws(gauges[gauges$gage_ID == basin_id, 'gage_name'])
     
     #... Code for individual basins, such as writing out model input files
     # Check out RavenR for file writing functions for the Raven Hydrological Modelling Framework!
@@ -122,7 +123,13 @@ for (ibasin in 1:(ceiling(length(allbasins)/bss))) {
 
 ## References
 ```
-Addor, N., Newman, A. J., Mizukami, N., & Clark, M. P. (2017). The CAMELS data set: catchment attributes and meteorology for large-sample studies. Hydrol. Earth Syst. Sci, 21, 5293–5313. https://doi.org/10.5194/hess-21-5293-2017
+Addor, N., Newman, A. J., Mizukami, N., & Clark, M. P. (2017).
+The CAMELS data set: catchment attributes and meteorology for large-sample studies.
+Hydrol. Earth Syst. Sci, 21, 5293–5313. https://doi.org/10.5194/hess-21-5293-2017
 
-Newman, A. J., Clark, M. P., Sampson, K., Wood, A., Hay, L. E., Bock, A., et al. (2015). Development of a large-sample watershed-scale hydrometeorological data set for the contiguous USA: data set characteristics and assessment of regional variability in hydrologic model performance. Hydrol. Earth Syst. Sci, 19, 209–223. https://doi.org/10.5194/hess-19-209-2015
+Newman, A. J., Clark, M. P., Sampson, K., Wood, A., Hay, L. E., Bock, A., et al. (2015).
+Development of a large-sample watershed-scale hydrometeorological data set for the
+contiguous USA: data set characteristics and assessment of regional variability in 
+hydrologic model performance. Hydrol. Earth Syst. Sci, 19, 209–223.
+https://doi.org/10.5194/hess-19-209-2015
 ```
