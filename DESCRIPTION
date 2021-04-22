@@ -1,0 +1,33 @@
+Package: caRmels
+Type: Package
+Title: Catchment Attributes and Meteorology for Large-Sample Studies R Package
+Version: 0.1.0
+Author: Leland Scantlebury
+Maintainer: Leland Scantlebury <lscantlebury@uwaterloo.ca>
+Description: Provides functions for downloading and working with data and metadata
+  from the Catchment Attributes and Meteorology for Large-Sample Studies (CAMELS) data
+  set described in Newman et al. (2015) and Addor et al. (2017).
+  https://ral.ucar.edu/solutions/products/camels
+License: MIT + file LICENSE
+  Copyright (c) 2019, Leland Scantlebury
+  Permission is hereby granted, free of charge, to any person obtaining
+  a copy of this software and associated documentation files (the
+  "Software"), to deal in the Software without restriction, including
+  without limitation the rights to use, copy, modify, merge, publish,
+  distribute, sublicense, and/or sell copies of the Software, and to
+  permit persons to whom the Software is furnished to do so, subject to
+  the following conditions:
+  The above copyright notice and this permission notice shall be
+  included in all copies or substantial portions of the Software.
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+  The CAMELS data set(s) have their own Terms of Use:
+  https://www.ucar.edu/terms-of-use
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
