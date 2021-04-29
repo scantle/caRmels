@@ -1,7 +1,11 @@
 # caRmels: An R interface for the CAMELS Dataset
-This R package adds some basic functionality to R for working with the Catchment Attributes and MEteorology for Large-sample Studies (CAMELS) dataset detailed in Newman et al. (2015) and Addor et al. (2017) and available at the [NCAR website](https://ral.ucar.edu/solutions/products/camels)
+This R package adds some basic functionality to R for working with the Catchment Attributes and MEteorology for Large-sample Studies (CAMELS) dataset detailed in Newman et al. (2015) and Addor et al. (2017) and available at the [NCAR website](https://ral.ucar.edu/solutions/products/camels).
 
 This package contains functions to download the datasets, but it is recommended you instead download them directly from the NCAR website.
+
+### Feature Requests
+Please use the Issues page to request features you would like to see added to the package. Alternatively, you can read about contributing to GitHub packages [here](
+https://github.com/MarcDiethelm/contributing/blob/master/README.md).
 
 ## Package Installation
 We suggest using the [devtools](https://cran.r-project.org/web/packages/devtools/index.html) package function `install_github` to install the package:
@@ -46,7 +50,7 @@ flow_dir <- file.path(camels_dir,'basin_dataset_public_v1p2/usgs_streamflow')
 streamflows <- importStreamflows(flow_dir, subset = basinSubset)
 ```
 
-Each of these forcing reading functions returns a list, indexed by basin id, with gauge data, location, and area. For instance, for basin 10259200 (DEEP C NR PALM DESERT CA), we can access the daymet forcings from our read-in object:
+Each of these forcing reading functions returns a list, indexed by basin id, with gauge data, location, and area. For instance, for basin [10259200](https://waterdata.usgs.gov/monitoring-location/10259200/) (DEEP C NR PALM DESERT CA), we can access the daymet forcings from our read-in object:
 ```r
 # Get daymet forcing for basin 10259200 - returns a DataFrame
 palm_desert_daymet_data <- basinForcings_daymet$`10259200`$data
