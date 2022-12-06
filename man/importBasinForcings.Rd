@@ -4,8 +4,7 @@
 \alias{importBasinForcings}
 \title{Import CAMELS basin forcings}
 \usage{
-importBasinForcings(folder, dataset, subset = NULL, verbose = TRUE,
-  ...)
+importBasinForcings(folder, dataset, subset = NULL, verbose = TRUE, ...)
 }
 \arguments{
 \item{folder}{name/path basin forcing folder (e.g., 'basin_mean_forcing')}

@@ -4,8 +4,12 @@
 \alias{read.streamflow}
 \title{Read CAMELS USGS Streamflow File}
 \usage{
-read.streamflow(filename, altheader = FALSE, dropDateInts = TRUE,
-  convertNA = TRUE)
+read.streamflow(
+  filename,
+  altheader = FALSE,
+  dropDateInts = TRUE,
+  convertNA = TRUE
+)
 }
 \arguments{
 \item{filename}{filename/path of HRU forcing text file}
