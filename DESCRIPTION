@@ -1,13 +1,13 @@
 Package: caRmels
 Type: Package
 Title: Catchment Attributes and Meteorology for Large-Sample Studies R Package
-Version: 0.1.0
+Version: 0.2.0
 Author: Leland Scantlebury
 Maintainer: Leland Scantlebury <lscantlebury@uwaterloo.ca>
 Description: Provides functions for downloading and working with data and metadata
   from the Catchment Attributes and Meteorology for Large-Sample Studies (CAMELS) data
   set described in Newman et al. (2015) and Addor et al. (2017).
-  https://ral.ucar.edu/solutions/products/camels
+  https://gdex.ucar.edu/dataset/camels.html
 License: MIT + file LICENSE
   Copyright (c) 2019, Leland Scantlebury
   Permission is hereby granted, free of charge, to any person obtaining
@@ -30,4 +30,4 @@ License: MIT + file LICENSE
   https://www.ucar.edu/terms-of-use
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.2.2

@@ -1,5 +1,5 @@
 # caRmels: An R interface for the CAMELS Dataset
-This R package adds some basic functionality to R for working with the Catchment Attributes and MEteorology for Large-sample Studies (CAMELS) dataset detailed in Newman et al. (2015) and Addor et al. (2017) and available at the [NCAR website](https://ral.ucar.edu/solutions/products/camels).
+This R package adds some basic functionality to R for working with the Catchment Attributes and MEteorology for Large-sample Studies (CAMELS) dataset detailed in Newman et al. (2015) and Addor et al. (2017) and available at the [NCAR website](https://gdex.ucar.edu/dataset/camels.html).
 
 This package contains functions to download the datasets, but it is recommended you instead download them directly from the NCAR website.
 
